@@ -5,8 +5,7 @@
 	"license": "MIT",
 	"scripts": {
 		"dev": "nodemon app.js",
-		"lint": "eslint ./*.js ./src/**/*.js ./src/**/**/*.js ",
-		"prepare": "cd .. && husky install backend/.husky"
+		"lint": "eslint ./*.js ./src/**/*.js ./src/**/**/*.js "
 	},
 	"devDependencies": {
 		"eslint": "^8.2.0",
