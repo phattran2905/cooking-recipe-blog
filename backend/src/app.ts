@@ -1,8 +1,11 @@
-import express from "express"
-const app = express()
+import Express from "express"
 
-app.get("/", (req, res) => {
-	res.send("Hello World!")
-})
+export default function makeApp(): Express.Application {
+	const app = Express()
 
-export default app
+	app.get("/", (req, res) => {
+		res.send("Hello World!")
+	})
+
+	return app
+}
