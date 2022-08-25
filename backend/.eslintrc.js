@@ -15,11 +15,14 @@ module.exports = {
 		ecmaVersion: "latest",
 		sourceType: "module",
 		tsconfigRootDir: __dirname,
+		// tsconfigRootDir: "./",
 		project: ["./tsconfig.json"]
 	},
 	plugins: ["@typescript-eslint", "prettier"],
 	root: true,
 	rules: {
-		"prettier/prettier": "error"
-	}
+		"prettier/prettier": "error",
+		"@typescript-eslint/restrict-template-expressions": "warn"
+	},
+	ignorePatterns: [".eslintrc.js"]
 }
