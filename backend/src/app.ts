@@ -1,11 +1,10 @@
 import Express from "express"
+import { router } from "./routes/router"
 
 export default function makeApp(): Express.Application {
 	const app = Express()
 
-	app.get("/", (req, res) => {
-		res.send("Hello World!")
-	})
+	app.use(router)
 
 	return app
 }
