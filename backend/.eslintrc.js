@@ -22,7 +22,15 @@ module.exports = {
 	root: true,
 	rules: {
 		"prettier/prettier": "error",
-		"@typescript-eslint/restrict-template-expressions": "warn"
+		"@typescript-eslint/restrict-template-expressions": "warn",
+		"@typescript-eslint/no-floating-promises": "warn",
+
+		"@typescript-eslint/no-misused-promises": [
+			"error",
+			{
+				checksVoidReturn: false
+			}
+		]
 	},
 	ignorePatterns: [".eslintrc.js"]
 }
