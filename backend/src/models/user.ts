@@ -1,5 +1,6 @@
 import { DataTypes, Model } from "sequelize"
-import { sequelize } from "../config/connectDb"
+import { createSequelize } from "../config/database"
+const sequelize = createSequelize()
 
 class User extends Model {}
 

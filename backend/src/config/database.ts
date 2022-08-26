@@ -18,17 +18,23 @@ const dbConfig: DB_CONFIG = {
 	username: DB_USER,
 	password: DB_PASSWORD,
 	port: +DB_PORT,
-	dialect: "postgres"
+	dialect: "postgres",
+	logging: false
 }
 
-export const sequelize: Sequelize = new Sequelize(dbConfig)
+// export const sequelize: Sequelize = new Sequelize(dbConfig)
 
-// validate connection
-sequelize
-	.authenticate()
-	.then(() => {
-		console.log("Connection has been established successfully.")
-	})
-	.catch((error) => {
-		console.error("Unable to connect to the database:", error)
-	})
+export const createSequelize = (): Sequelize => new Sequelize(dbConfig)
+
+// Check connection
+export const checkDbConnection = (): void => {
+	const sequelize = new Sequelize(dbConfig)
+	sequelize
+		.authenticate()
+		.then(() => {
+			console.log("Connection has been established successfully.")
+		})
+		.catch((error) => {
+			console.error("Unable to connect to the database:", error)
+		})
+}

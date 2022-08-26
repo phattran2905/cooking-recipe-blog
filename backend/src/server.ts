@@ -1,11 +1,12 @@
 import path from "path"
 import dotenv from "dotenv"
 import makeApp from "./app"
-import { sequelize } from "./config/connectDb"
+import { checkDbConnection } from "./config/database"
 
 dotenv.config({ path: path.resolve(process.cwd(), "src/config.env") })
+checkDbConnection()
 
-const app = makeApp(sequelize)
+const app = makeApp()
 const PORT = process.env.PORT ?? 3000
 
 app.listen(PORT, () => {
